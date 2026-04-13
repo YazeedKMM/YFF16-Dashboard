@@ -40,7 +40,7 @@ const StatCard = ({ title, value, change, changeType, icon, colorClass, delay }:
         <span className={changeType === "positive" ? "text-green-600" : "text-red-500"}>
           {change}
         </span>
-        <span className="text-muted-foreground">vs yesterday</span>
+        <span className="text-muted-foreground">مقارنة بالأمس</span>
       </div>
     </div>
   );
