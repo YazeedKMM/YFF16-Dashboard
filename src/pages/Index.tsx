@@ -9,14 +9,14 @@ const Index = () => {
       <header className="bg-card border-b border-border shadow-sm">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <img src={logo} alt="شعار مهرجان ينبع للزهور" className="h-14 w-auto" />
+            <img src={logo} alt="شعار مهرجان الزهور والحدائق" className="h-14 w-auto" />
             <div>
-              <h1 className="text-xl font-bold text-foreground">مهرجان ينبع للزهور</h1>
-              <p className="text-sm text-muted-foreground">لوحة متابعة التذاكر</p>
+              <h1 className="text-xl font-bold text-foreground">مهرجان الزهور والحدائق رقم ١٦</h1>
+              <p className="text-sm text-muted-foreground">ملخص زوار ومبيعات</p>
             </div>
           </div>
           <div className="text-sm text-muted-foreground bg-muted px-4 py-2 rounded-lg font-semibold">
-            ١٣ أبريل ٢٠٢٦
+            ينبع
           </div>
         </div>
       </header>
@@ -27,7 +27,7 @@ const Index = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           <StatCard
             title="إجمالي الزوار"
-            value="١٩,١٠٠"
+            value="١٦٥,١٤٢"
             change="+١٢.٥٪"
             changeType="positive"
             icon="visitors"
@@ -35,8 +35,8 @@ const Index = () => {
             delay={0}
           />
           <StatCard
-            title="التذاكر اليومية"
-            value="١١,٥٠٠"
+            title="إجمالي التذاكر"
+            value="١٦٠,٨٣٥"
             change="+٨.٣٪"
             changeType="positive"
             icon="tickets"
@@ -44,21 +44,21 @@ const Index = () => {
             delay={100}
           />
           <StatCard
-            title="التذاكر الموسمية"
-            value="٧,٦٠٠"
-            change="-٣.١٪"
-            changeType="negative"
-            icon="tickets"
-            colorClass="bg-festival-purple/10 text-festival-purple"
-            delay={200}
-          />
-          <StatCard
-            title="إجمالي الإيرادات"
-            value="٦١٠,٠٠٠ ر.س"
+            title="إجمالي المبيعات"
+            value="٨٢٤,٣٦٠ ر.س"
             change="+١٥.٢٪"
             changeType="positive"
             icon="revenue"
             colorClass="bg-festival-yellow/10 text-festival-yellow"
+            delay={200}
+          />
+          <StatCard
+            title="التذاكر الموسمية"
+            value="٥,٠٣٧"
+            change="+٥.٤٪"
+            changeType="positive"
+            icon="tickets"
+            colorClass="bg-festival-purple/10 text-festival-purple"
             delay={300}
           />
         </div>
