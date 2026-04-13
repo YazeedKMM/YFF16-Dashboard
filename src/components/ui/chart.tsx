@@ -89,6 +89,9 @@ ${colorConfig
 
 const ChartTooltip = RechartsPrimitive.Tooltip;
 
+const formatEnglishNumber = (value: number | string) =>
+  new Intl.NumberFormat("en-US").format(typeof value === "number" ? value : Number(value));
+
 const ChartTooltipContent = React.forwardRef<
   HTMLDivElement,
   React.ComponentProps<typeof RechartsPrimitive.Tooltip> &
@@ -209,7 +212,7 @@ const ChartTooltipContent = React.forwardRef<
                       </div>
                       {item.value && (
                         <span className="font-mono font-medium tabular-nums text-foreground">
-                          {item.value.toLocaleString()}
+                          {formatEnglishNumber(item.value)}
                         </span>
                       )}
                     </div>

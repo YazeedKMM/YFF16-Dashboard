@@ -1,10 +1,9 @@
-import { Users, Ticket, DollarSign, TrendingUp, TrendingDown } from "lucide-react";
+import type { ReactNode } from "react";
+import { Users, Ticket, DollarSign } from "lucide-react";
 
 interface StatCardProps {
   title: string;
-  value: string;
-  change: string;
-  changeType: "positive" | "negative";
+  value: ReactNode;
   icon: "visitors" | "tickets" | "revenue";
   colorClass: string;
   delay: number;
@@ -16,7 +15,7 @@ const iconMap = {
   revenue: DollarSign,
 };
 
-const StatCard = ({ title, value, change, changeType, icon, colorClass, delay }: StatCardProps) => {
+const StatCard = ({ title, value, icon, colorClass, delay }: StatCardProps) => {
   const Icon = iconMap[icon];
 
   return (
@@ -30,18 +29,7 @@ const StatCard = ({ title, value, change, changeType, icon, colorClass, delay }:
           <Icon className="w-5 h-5" />
         </div>
       </div>
-      <div className="text-3xl font-bold text-card-foreground mb-2">{value}</div>
-      <div className="flex items-center gap-1 text-sm">
-        {changeType === "positive" ? (
-          <TrendingUp className="w-4 h-4 text-green-600" />
-        ) : (
-          <TrendingDown className="w-4 h-4 text-red-500" />
-        )}
-        <span className={changeType === "positive" ? "text-green-600" : "text-red-500"}>
-          {change}
-        </span>
-        <span className="text-muted-foreground">مقارنة بالأمس</span>
-      </div>
+      <div className="text-3xl font-bold text-card-foreground">{value}</div>
     </div>
   );
 };

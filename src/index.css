@@ -1,5 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap');
 
+@font-face {
+  font-family: "SaudiRiyal";
+  src:
+    url("/fonts/saudi-riyal/regular/saudi_riyal.woff2") format("woff2"),
+    url("/fonts/saudi-riyal/regular/saudi_riyal.woff") format("woff"),
+    url("/fonts/saudi-riyal/regular/saudi_riyal.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SaudiRiyal";
+  src:
+    url("/fonts/saudi-riyal/bold/saudi_riyal.woff2") format("woff2"),
+    url("/fonts/saudi-riyal/bold/saudi_riyal.woff") format("woff"),
+    url("/fonts/saudi-riyal/bold/saudi_riyal.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -84,6 +104,15 @@
 }
 
 @layer base {
+  .font-saudi-riyal {
+    font-family: "SaudiRiyal", "Cairo", sans-serif;
+  }
+
+  .font-saudi-riyal-bold {
+    font-family: "SaudiRiyal", "Cairo", sans-serif;
+    font-weight: 700;
+  }
+
   * {
     @apply border-border;
   }
