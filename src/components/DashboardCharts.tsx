@@ -1,6 +1,6 @@
-import {
-  Tooltip, ResponsiveContainer, PieChart, Pie, Cell,
-} from "recharts";
+/** @format */
+
+import { Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from "recharts";
 import RiyalAmount from "@/components/RiyalAmount";
 
 const summaryRows = [
@@ -38,18 +38,24 @@ const pieData = [
 
 const COLORS = ["#006daa", "#cd66d3"];
 const totalTickets = pieData.reduce((sum, item) => sum + item.value, 0);
-const formatNumber = (value: number) => new Intl.NumberFormat("en-US").format(value);
+const formatNumber = (value: number) =>
+  new Intl.NumberFormat("en-US").format(value);
 
 const DashboardCharts = () => (
   <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
     {/* Summary table */}
-    <div className="bg-card rounded-lg p-6 shadow-sm border border-border opacity-0 animate-fade-in" style={{ animationDelay: "400ms" }}>
+    <div
+      className="bg-card rounded-lg p-6 shadow-sm border border-border opacity-0 animate-fade-in"
+      style={{ animationDelay: "400ms" }}
+    >
       <div className="mb-4">
-        <h3 className="text-lg font-bold text-card-foreground">ملخص زوار ومبيعات مهرجان الزهور والحدائق رقم 16</h3>
+        <h3 className="text-lg font-bold text-card-foreground">
+          ملخص زوار ومبيعات مهرجان الزهور والحدائق رقم 16
+        </h3>
       </div>
       <div className="rounded-2xl border border-border/60 bg-muted/20 p-3 sm:p-4">
         <div className="mb-3 grid grid-cols-[1.1fr_repeat(3,minmax(0,1fr))] gap-2 text-center text-xs font-semibold text-muted-foreground sm:gap-3 sm:text-sm">
-          <div className="rounded-xl px-3 py-2 text-right">البيان</div>
+          <div className="rounded-xl px-3 py-2 text-right"></div>
           <div className="rounded-xl bg-background px-3 py-2">اليومية</div>
           <div className="rounded-xl bg-background px-3 py-2">الموسمية</div>
           <div className="rounded-xl bg-background px-3 py-2">الإجمالي</div>
@@ -63,25 +69,47 @@ const DashboardCharts = () => (
               <div className="flex items-center gap-3 text-right sm:min-h-[72px]">
                 <span className={`h-10 w-2 rounded-full ${row.accentBg}`} />
                 <div className="flex min-h-[40px] items-center">
-                  <p className="text-sm font-bold text-card-foreground">{row.label}</p>
+                  <p className="text-sm font-bold text-card-foreground">
+                    {row.label}
+                  </p>
                 </div>
               </div>
               <div className="rounded-xl bg-muted/30 px-3 py-3 text-center">
-                <p className="text-[11px] font-semibold text-muted-foreground sm:hidden">اليومية</p>
+                <p className="text-[11px] font-semibold text-muted-foreground sm:hidden">
+                  اليومية
+                </p>
                 <p className="text-base font-bold text-card-foreground">
-                  {row.isCurrency ? <RiyalAmount amount={row.daily} /> : row.daily}
+                  {row.isCurrency ? (
+                    <RiyalAmount amount={row.daily} />
+                  ) : (
+                    row.daily
+                  )}
                 </p>
               </div>
               <div className="rounded-xl bg-muted/30 px-3 py-3 text-center">
-                <p className="text-[11px] font-semibold text-muted-foreground sm:hidden">الموسمية</p>
+                <p className="text-[11px] font-semibold text-muted-foreground sm:hidden">
+                  الموسمية
+                </p>
                 <p className="text-base font-bold text-card-foreground">
-                  {row.isCurrency ? <RiyalAmount amount={row.seasonal} /> : row.seasonal}
+                  {row.isCurrency ? (
+                    <RiyalAmount amount={row.seasonal} />
+                  ) : (
+                    row.seasonal
+                  )}
                 </p>
               </div>
-              <div className={`rounded-xl px-3 py-3 text-center ${row.accentBg}`}>
-                <p className="text-[11px] font-semibold text-muted-foreground sm:hidden">الإجمالي</p>
+              <div
+                className={`rounded-xl px-3 py-3 text-center ${row.accentBg}`}
+              >
+                <p className="text-[11px] font-semibold text-muted-foreground sm:hidden">
+                  الإجمالي
+                </p>
                 <p className={`text-base font-extrabold ${row.accent}`}>
-                  {row.isCurrency ? <RiyalAmount amount={row.total} boldSymbol /> : row.total}
+                  {row.isCurrency ? (
+                    <RiyalAmount amount={row.total} boldSymbol />
+                  ) : (
+                    row.total
+                  )}
                 </p>
               </div>
             </div>
@@ -91,9 +119,14 @@ const DashboardCharts = () => (
     </div>
 
     {/* Pie chart */}
-    <div className="bg-card rounded-lg p-6 shadow-sm border border-border opacity-0 animate-fade-in" style={{ animationDelay: "500ms" }}>
+    <div
+      className="bg-card rounded-lg p-6 shadow-sm border border-border opacity-0 animate-fade-in"
+      style={{ animationDelay: "500ms" }}
+    >
       <div className="mb-4">
-        <h3 className="text-lg font-bold text-card-foreground">توزيع التذاكر</h3>
+        <h3 className="text-lg font-bold text-card-foreground">
+          توزيع التذاكر
+        </h3>
       </div>
       <div className="rounded-2xl border border-border/60 bg-muted/20 p-4">
         <ResponsiveContainer width="100%" height={300}>
@@ -167,11 +200,17 @@ const DashboardCharts = () => (
                   style={{ backgroundColor: COLORS[index] }}
                 />
                 <div>
-                  <p className="text-sm font-semibold text-card-foreground">{item.name}</p>
-                  <p className="text-xs text-muted-foreground">{percent}% من الإجمالي</p>
+                  <p className="text-sm font-semibold text-card-foreground">
+                    {item.name}
+                  </p>
+                  <p className="text-xs text-muted-foreground">
+                    {percent}% من الإجمالي
+                  </p>
                 </div>
               </div>
-              <p className="text-sm font-bold text-card-foreground">{formatNumber(item.value)}</p>
+              <p className="text-sm font-bold text-card-foreground">
+                {formatNumber(item.value)}
+              </p>
             </div>
           );
         })}
